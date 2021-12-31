@@ -26,7 +26,7 @@ import javax.swing.event.DocumentListener;
 
 public class GUI extends JComponent implements Runnable, ActionListener
 {
-	private double x = 0;					//double Wert fuer die x-Koordinate
+	private double x = 0;					//double Wert fuer die x-Koordinate 
 	private double y = 0;					//double Wert fuer die y-Koordinate
 	
 	private boolean start = false;			//bool Wert fuer die Start & Stopp Knoepfe
