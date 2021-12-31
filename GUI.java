@@ -47,9 +47,9 @@ public class GUI extends JComponent implements Runnable, ActionListener
 	private double g_entry = 9.81;			//eingegebene Erdbeschleunigung
 	private double f_entry = 0.05;			//eingegebene Daempfungskonstante
 	
-	private boolean entry_changed = false;			//bool Wert um zu ueberpraefen, ob Eingaben abgeaendert wurden
-	private boolean friction_changed = false;		//bool Wert um zu ueberpraefen, ob der Daempfungswert geaendert wurde
-	private boolean friction_button_on = false;		//bool Wert um zu ueberpraefen, ob der Daempfungs Knopf gedruckt wurde
+	private boolean entry_changed = false;			//bool Wert um zu ueberpruefen, ob Eingaben abgeaendert wurden
+	private boolean friction_changed = false;		//bool Wert um zu ueberpruefen, ob der Daempfungswert geaendert wurde
+	private boolean friction_button_on = false;		//bool Wert um zu ueberpruefen, ob der Daempfungs Knopf gedruckt wurde
 	private boolean friction = false;				//bool Wert um die Daempfung zu toggeln
 	
 	Pendel p;
@@ -111,7 +111,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
     {
 		while (true)
         {
-			//Wenn auf dem Start Knop gedruckt wurde, wird gepraeft, ob die Daempfung an oder aus ist, bzw. wenn die Daempfung an ist,
+			//Wenn auf dem Start Knop gedruckt wurde, wird geprueft, ob die Daempfung an oder aus ist, bzw. wenn die Daempfung an ist,
 			//ob dann der Wert von der Daempfung geaendert wurde, falls ja werden die entsprechenden Werte aktualisiert. Falls nicht 
 			//wird einfach nur der neue Winkel berechnet und repaint() aufgerufen.
 			if(start)
@@ -130,8 +130,8 @@ public class GUI extends JComponent implements Runnable, ActionListener
 					repaint();
 				}
 			}
-			//Wenn der Stopp Knopf gedruckt wurde, wird gepraeft, ob die Parameter veraendert wurden. Falls ja, werden die neuen
-			//Parameter aebernommen.
+			//Wenn der Stopp Knopf gedruckt wurde, wird geprueft, ob die Parameter veraendert wurden. Falls ja, werden die neuen
+			//Parameter uebernommen.
 			else if(!start)
 			{
 				if(entry_changed)
@@ -164,11 +164,11 @@ public class GUI extends JComponent implements Runnable, ActionListener
         int w = getWidth ();
         int h = getHeight ();
         
-        //Hintergrund wird mit einem grauen Rechteck aufgefaellt.
+        //Hintergrund wird mit einem grauen Rechteck aufgefuellt.
         g.setColor(Color.GRAY);
         g.fillRect(0, 0, w, h);
        
-        //Die Methode drawPendlum wird aufgerufen. Sie bekommt die Haehe und Breite des Fensters & den neu berechneten Winkel aebergeben.
+        //Die Methode drawPendlum wird aufgerufen. Sie bekommt die Hoehe und Breite des Fensters & den neu berechneten Winkel uebergeben.
         drawPendlum (g2, w/2, h/2, p.getAngle());
     }
 	
@@ -187,7 +187,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
     	//Berechnung & Anzeigen der aktuellen Geschwindigkeit
     	g2.drawString("Geschwindigkeit = " + rint((p.getVelocity()),2) + " rad/s", xm+30, 65);
 
-    	//Falls Daempfung an ist, wird aeberpraeft, ob das Pendel kurz vor dem Stehen ist.
+    	//Falls Daempfung an ist, wird ueberprueft, ob das Pendel kurz vor dem Stehen ist.
         if(friction)
         {
         	double x_neu = xm + (ym/2) * Math.sin(phi); 	//oder statt (ym/2), einen festen Wert
@@ -227,7 +227,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
     	Shape bP = new Ellipse2D.Double(xm-5, ym, 10, 10);
         g2.draw(bP);
     	
-        //Die punktfaermige Masse wird gezeichnet. r ist der Radius der punktfaermigen Masse. 
+        //Die punktfoermige Masse wird gezeichnet. r ist der Radius der punktfoermigen Masse. 
     	int r = 35;
     	//g2.fillOval((int) ((x)-r/2), (int) (y - r/2), r, r);
     	Shape ball = new Ellipse2D.Double(x-r/2, ym+y-r/2, r, r);
@@ -254,11 +254,11 @@ public class GUI extends JComponent implements Runnable, ActionListener
 	     //Erzeugen der GUI
 	     GUI g = new GUI();
 	      
-	     //JPanel faer alle Eingaben 
+	     //JPanel fuer alle Eingaben 
 	     JPanel input = new JPanel();
 	     input.setLayout(new GridLayout(5,3));
 	      
-	     //JLabel faer die Laenge
+	     //JLabel fuer die Laenge
 	     JLabel length_label = new JLabel("Laenge [m]:");
 	     length_slider.setMajorTickSpacing(1);
 	     length_slider.setPaintTicks(true);
@@ -266,14 +266,14 @@ public class GUI extends JComponent implements Runnable, ActionListener
 	     input.add(length_slider);
 	     input.add(length_entry);
 	      
-	     //JLabel faer die Erdbeschleunigung
+	     //JLabel fuer die Erdbeschleunigung
 	     JLabel gravity_label = new JLabel("Erdbeschleunigung [m/sae]: ");
 	     JLabel gravity_label1 = new JLabel("");
 	     input.add(gravity_label);
 	     input.add(gravity_label1);
 	     input.add(gravity_entry);
 	      
-	     //JLabel faer den Winkel
+	     //JLabel fuer den Winkel
 	     JLabel phi_label = new JLabel("Anfangswinkel [ae]:");
 	     phi_slider.setMajorTickSpacing(45);
 	     phi_slider.setPaintTicks(true);
@@ -281,7 +281,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
 	     input.add(phi_slider);
 	     input.add(phi_entry);
 	      
-	     //JLabel faer die Daempfung
+	     //JLabel fuer die Daempfung
 	     JLabel friction_label = new JLabel("Daempfung:");
 	     input.add(friction_label);
 	     friction_button.setBackground(Color.GRAY);
@@ -309,7 +309,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
 	     f.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
 	 }
 	 
-	//ChangeListener faer die zwei Slider. Falls der Slider verschoben wird, wird der jeweilige JLabel angepasst.
+	//ChangeListener fuer die zwei Slider. Falls der Slider verschoben wird, wird der jeweilige JLabel angepasst.
 	public class event implements ChangeListener
 	{
 		@Override
@@ -334,17 +334,17 @@ public class GUI extends JComponent implements Runnable, ActionListener
 		}
 	}
 
-	//actionListener Methoden faer die Knaepfe.
+	//actionListener Methoden fuer die Knoepfe.
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		Object obi = e.getSource();
-		//Falls der Start Knop gedruckt wurde, wird die Bool Variable start auf true gesetzt.
+		//Falls der Start Knopf gedruckt wurde, wird die Bool Variable start auf true gesetzt.
 		if(obi == start_button)
 		{
 			start = true;
 		}
-		//Falls der Stopp Knop gedruckt wurde, wird die Bool Variable start auf false gesetzt.
+		//Falls der Stopp Knopf gedruckt wurde, wird die Bool Variable start auf false gesetzt.
 		else if(obi == stop_button)
 		{
 			start = false;
@@ -370,7 +370,7 @@ public class GUI extends JComponent implements Runnable, ActionListener
 		}
 	}
 		
-	//DocumentListener faer die JTextFields.
+	//DocumentListener fuer die JTextFields.
 	@FunctionalInterface
 	public interface SimpleDocumentListener extends DocumentListener 
 	{
