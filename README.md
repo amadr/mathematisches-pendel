@@ -5,5 +5,5 @@ Die Bewegungsdifferentialgleichung wird mithilfe des Euler Verfahrens numerisch 
 Der Code wurde mthilfe der Entwicklungsumgebung Eclipse geschrieben.
 
 <p align="center">
-  <img src="https://github.com/amadr/mathematisches-pendel/blob/master/GUI.png" />
+  <img src="https://github.com/amadr/mathematisches-pendel/blob/master/gui_screenshot.png" />
 </p>
